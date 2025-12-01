@@ -10,6 +10,8 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: admin123
+    volumes:
+      - mongo-data:/data/db
 
   mongo-express:
     image: mongo-express:latest
@@ -40,3 +42,6 @@ services:
       - backend
     ports:
       - "3000:80"
+
+volumes:
+  mongo-data:
